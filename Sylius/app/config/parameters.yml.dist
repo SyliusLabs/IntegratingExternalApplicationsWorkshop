@@ -1,0 +1,18 @@
+parameters:
+    database_host: 127.0.0.1
+    database_port: ~
+    database_name: sylius_workshop_croatia
+    database_user: root
+    database_password: ~
+
+    rabbitmq_host: 127.0.0.1
+    rabbitmq_port: 5672
+    rabbitmq_username: guest
+    rabbitmq_password: guest
+
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: ~
+    mailer_password: ~
+
+    secret: EDITME

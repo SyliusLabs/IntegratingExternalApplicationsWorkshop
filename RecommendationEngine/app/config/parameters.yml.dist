@@ -1,0 +1,12 @@
+parameters:
+    neo4j_host: 127.0.0.1
+    neo4j_port: 7474
+    neo4j_username: neo4j
+    neo4j_password: neo4j
+
+    rabbitmq_host: 127.0.0.1
+    rabbitmq_port: 5672
+    rabbitmq_username: guest
+    rabbitmq_password: guest
+
+    secret: ThisTokenIsNotSoSecretChangeIt
