@@ -3,4 +3,16 @@
 <container xmlns="http://symfony.com/schema/dic/services"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="app.event_listener.customer_placed_order" class="AppBundle\EventListener\CustomerPlacedOrderPublisher">
+            <argument type="service" id="event_bus" />
+            <tag name="kernel.event_listener" event="sylius.order.post_complete" method="publishCustomerPlacedOrder" />
+        </service>
+
+        <service id="app.producer.customer_placed_order" class="AppBundle\Amqp\Producer\CustomerPlacedOrderProducer">
+            <argument type="service" id="app.producer.sylius_workshop_croatia" />
+            <tag name="event_subscriber" subscribes_to="AppBundle\Event\CustomerPlacedOrder" method="handleCustomerPlacedOrder" />
+        </service>
+    </services>
 </container>
