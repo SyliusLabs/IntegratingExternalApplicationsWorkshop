@@ -5,6 +5,10 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <service id="recommendation_engine.infrastructure.amqp_denormalizer.customer_placed_order" class="RecommendationEngine\Infrastructure\Amqp\Denormalizer\CustomerPlacedOrderDenormalizer">
+            <tag name="rabbitmq_simplebus.amqp_denormalizer" />
+        </service>
+
         <service id="recommendation_engine.application.repository.product" class="RecommendationEngine\Infrastructure\Repository\Neo4jProductRepository">
             <argument type="service" id="neo4j.entity_manager.default" />
         </service>
