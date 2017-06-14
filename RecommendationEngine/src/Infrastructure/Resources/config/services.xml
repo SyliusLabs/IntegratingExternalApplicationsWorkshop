@@ -17,5 +17,9 @@
             <argument type="service" id="neo4j.entity_manager.default" />
             <tag name="event_subscriber" subscribes_to="RecommendationEngine\Domain\Event\CustomerPlacedOrder" method="handleCustomerPlacedOrder" />
         </service>
+
+        <service id="recommedation_engine.infrastructure.http_action.get_recommended_products" class="RecommendationEngine\Infrastructure\Http\Action\GetRecommendedProductsAction">
+            <argument type="service" id="recommendation_engine.application.repository.product" />
+        </service>
     </services>
 </container>

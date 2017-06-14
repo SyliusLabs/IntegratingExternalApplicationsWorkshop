@@ -1,1 +1,6 @@
-
+recommendation_engine_get_recommended_products:
+    path: /recommended-products/{productCode}
+    methods: [GET]
+    defaults:
+        _controller: recommedation_engine.infrastructure.http_action.get_recommended_products
+        _format: json
